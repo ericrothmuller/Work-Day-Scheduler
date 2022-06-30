@@ -4,7 +4,7 @@ var hour = moment().hour();
 
 console.log(hour);
 
-$("#currentDay").text(today.format("dddd, MMMM do"));
+$("#currentDay").text(today.format("dddd, MMMM Do"));
 
 
 
