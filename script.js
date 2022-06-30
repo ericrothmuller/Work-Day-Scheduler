@@ -112,17 +112,3 @@ if (hour < 17) {
 
 
 
-
-
-
-
-
-// Pseudo code for how to get the rows to change color
-
-// Get the current hour in a single number - done
-
-// If that hour matches a row number (based on hour), apply the .present class - done
-
-// If a row is greater than that number, apply the .future class - done
-
-// is a row is less than that number, apply the .past class - done
