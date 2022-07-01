@@ -137,13 +137,47 @@ for (let i = 0; i < localStorage.length; i++) {
 }
 
 
+// var inputKey = "9:00 AM";
+
+// var inputValue = document.getElementById("9hourtext");
+
+// var buttonSave = document.getElementsByClassName("saveBtn");
+
+// var outputArea = document.getElementById("9hourtext");
+
+// buttonSave.onclick = function (event) {
+//     var buttonClicked = event.target;
+//     var inputtedText = this.siblings("textarea").value;
+//     if (inputtedText == "") {
+//         localStorage.removeItem(buttonClicked, inputtedText);
+//     } else {
+//         localStorage.setItem(buttonClicked.dataset.save, inputtedText);
+//     }
+// };
+
+// function getStorage() {
+//     inputtedText.text(localStorage.getItem("9hourdata"));
+// }
+
+// getStorage();
 
 
+//     const key = inputKey;
+//     const value = inputValue.value;
 
+//     if (value) {
+//         localStorage.setItem(key, value);
+//     } else if (!value) {
+//         localStorage.removeItem(key, value);
+//     }
+// }
 
+// for (let i = 0; i < localStorage.length; i++) {
+//     const key = localStorage.key(i);
+//     const value = localStorage.getItem(key);
 
-
-
+//     outputArea.innerHTML += value;
+// }
 
 
 
