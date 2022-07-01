@@ -2,8 +2,6 @@ var today = moment();
 
 var hour = moment().hour();
 
-console.log(hour);
-
 $("#currentDay").text(today.format("LLLL"));
 
 
@@ -108,51 +106,74 @@ if (hour < 17) {
     changeColor.classList.add("past");
     }
 
+// Local Storage
 
-$(".saveBtn").on("click", function (event) {
-    var saveItem = event.target;
-    var savedLocal = $(this).siblings("textarea").val();
-    if (savedLocal == "") {
-        console.log("empty");
-    } else {
-        console.log("text");
-        localStorage.setItem(saveItem.dataset.save, savedLocal);
+// 9am
 
-        console.log($(this).siblings("textarea"));
+var inputKey = "9:00 AM";
+
+var inputValue = document.getElementById("9hourtext");
+
+var buttonSave = document.getElementById("9hourbutton");
+
+var outputArea = document.getElementById("9hourtext");
+
+buttonSave.onclick = function () {
+    const key = inputKey;
+    const value = inputValue.value;
+
+    if (value) {
+        localStorage.setItem(key, value);
+    } else if (!value) {
+        localStorage.removeItem(key, value);
     }
-});
-
-// var ninehourbtn = getElementById("ninehourbtn");
-// var tenhourbtn = getElementById("tenhourbtn");
-// var elevenhourbtn = getElementById("elevenhourbtn");
-// var twelvehourbtn = getElementById("twelvehourbtn");
-// var thirteenhourbtn = getElementById("thirteenhourbtn");
-// var fourteenhourbtn = getElementById("fourteenhourbtn");
-// var fifteenhourbtn = getElementById("fifteenhourbtn");
-// var sixteenhourbtn = getElementById("sixteenhourbtn");
-// var seventeenhourbtn = getElementById("seventeenhourbtn");
-
-
-var nineText = document.getElementById("9hourtext");
-var tenText = document.getElementById("10hourtext");
-var elevenText = document.getElementById("11hourtext");
-var twelveText = document.getElementById("12hourtext");
-var thirteenText = document.getElementById("13hourtext");
-var fourteenText = document.getElementById("14hourtext");
-var fifteenText = document.getElementById("15hourtext");
-var sixteenText = document.getElementById("16hourtext");
-var seventeenText = document.getElementById("17hourtext");
-
-function saveText() {
-    nineText.text(localStorage.getItem("ninehourbtn"));
-    tenText.text(localStorage.getItem("tenhourbtn"));
-    elevenText.text(localStorage.getItem("elevenhourbtn"));
-    twelveText.text(localStorage.getItem("twelvehourbtn"));
-    thirteenText.text(localStorage.getItem("thirteenhourbtn"));
-    fourteenText.text(localStorage.getItem("fourteenhourbtn"));
-    fifteenText.text(localStorage.getItem("fifteenhourbtn"));
-    sixteenText.text(localStorage.getItem("sixteenhourbtn"));
-    seventeenText.text(localStorage.getItem("seventeenhourbtn"));
 }
 
-saveText();
+for (let i = 0; i < localStorage.length; i++) {
+    const key = localStorage.key(i);
+    const value = localStorage.getItem(key);
+
+    outputArea.innerHTML += value;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// 10am
+
+// var inputKey = "10:00 AM";
+
+// var inputValue = document.getElementById("10hourtext");
+
+// var buttonSave = document.getElementById("10hourbutton");
+
+// var outputArea = document.getElementById("10hourtext");
+
+// buttonSave.onclick = function () {
+//     const key = inputKey;
+//     const value = inputValue.value;
+
+//     if (value) {
+//         localStorage.setItem(key, value);
+//     } else if (!value) {
+//         localStorage.removeItem(key, value);
+//     }
+// }
+
+// for (let i = 0; i < localStorage.length; i++) {
+//     const key = localStorage.key(i);
+//     const value = localStorage.getItem(key);
+
+//     outputArea.innerHTML += value;
+// }
