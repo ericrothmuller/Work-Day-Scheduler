@@ -1,3 +1,5 @@
+// These are universal varials stored for the use of the time elements on the page
+
 var today = moment();
 
 var hour = moment().hour();
@@ -5,7 +7,7 @@ var hour = moment().hour();
 $("#currentDay").text(today.format("LLLL"));
 
 
-
+// Setting rows colors based on time starts here
 
 if (hour < 9) {
     const changeColor = document.getElementById("9hour");
@@ -106,9 +108,11 @@ if (hour < 17) {
     changeColor.classList.add("past");
     }
 
-// Local Storage
+// Local Storage starts here
 
 var rowContainer = document.querySelector("#rowcontainer");
+
+// Save Button is here
 
 rowContainer.addEventListener("click", function(event) {
     var element = event.target;
@@ -129,6 +133,7 @@ rowContainer.addEventListener("click", function(event) {
     }
 })
 
+// Getting and printing Local Storage starts here
 
 for (let i = 0; i < localStorage.length; i++) {
     let key = localStorage.key(i);
