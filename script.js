@@ -108,106 +108,65 @@ if (hour < 17) {
 
 // Local Storage
 
-// 9am
+var rowContainer = document.querySelector("#rowcontainer");
 
-var inputKey = "9:00 AM";
+rowContainer.addEventListener("click", function(event) {
+    var element = event.target;
 
-var inputValue = document.getElementById("9hourtext");
+    if (element.matches("button") === true) {
+        var areaId = element.previousElementSibling.getAttribute("id");
 
-var buttonSave = document.getElementById("9hourbutton");
+        var pageId = document.getElementById(areaId);
 
-var outputArea = document.getElementById("9hourtext");
+        var inputKey = areaId;
+        var inputValue = pageId.value;
 
-buttonSave.onclick = function () {
-    const key = inputKey;
-    const value = inputValue.value;
-
-    if (value) {
-        localStorage.setItem(key, value);
-    } else if (!value) {
-        localStorage.removeItem(key, value);
+        if (inputValue) {
+        localStorage.setItem(inputKey, inputValue);
+    } else if (!inputValue) {
+        localStorage.removeItem(inputKey, inputValue);
     }
-}
+    }
+})
+
 
 for (let i = 0; i < localStorage.length; i++) {
-    const key = localStorage.key(i);
-    const value = localStorage.getItem(key);
+    let key = localStorage.key(i);
+    let value = localStorage.getItem(key);
 
-    outputArea.innerHTML += value;
+    if (key == "9hourtext") {
+        document.getElementById("9hourtext").innerHTML += value;
+        }
+
+    if (key == "10hourtext") {
+        document.getElementById("10hourtext").innerHTML += value;
+        }
+
+    if (key == "11hourtext") {
+        document.getElementById("11hourtext").innerHTML += value;
+        }
+
+    if (key == "12hourtext") {
+        document.getElementById("12hourtext").innerHTML += value;
+        }
+
+    if (key == "13hourtext") {
+        document.getElementById("13hourtext").innerHTML += value;
+        }
+
+    if (key == "14hourtext") {
+        document.getElementById("14hourtext").innerHTML += value;
+        }
+
+    if (key == "15hourtext") {
+        document.getElementById("15hourtext").innerHTML += value;
+        }
+
+    if (key == "16hourtext") {
+        document.getElementById("16hourtext").innerHTML += value;
+        }
+
+    if (key == "17hourtext") {
+        document.getElementById("17hourtext").innerHTML += value;
+        }
 }
-
-
-// var inputKey = "9:00 AM";
-
-// var inputValue = document.getElementById("9hourtext");
-
-// var buttonSave = document.getElementsByClassName("saveBtn");
-
-// var outputArea = document.getElementById("9hourtext");
-
-// buttonSave.onclick = function (event) {
-//     var buttonClicked = event.target;
-//     var inputtedText = this.siblings("textarea").value;
-//     if (inputtedText == "") {
-//         localStorage.removeItem(buttonClicked, inputtedText);
-//     } else {
-//         localStorage.setItem(buttonClicked.dataset.save, inputtedText);
-//     }
-// };
-
-// function getStorage() {
-//     inputtedText.text(localStorage.getItem("9hourdata"));
-// }
-
-// getStorage();
-
-
-//     const key = inputKey;
-//     const value = inputValue.value;
-
-//     if (value) {
-//         localStorage.setItem(key, value);
-//     } else if (!value) {
-//         localStorage.removeItem(key, value);
-//     }
-// }
-
-// for (let i = 0; i < localStorage.length; i++) {
-//     const key = localStorage.key(i);
-//     const value = localStorage.getItem(key);
-
-//     outputArea.innerHTML += value;
-// }
-
-
-
-
-
-
-// 10am
-
-// var inputKey = "10:00 AM";
-
-// var inputValue = document.getElementById("10hourtext");
-
-// var buttonSave = document.getElementById("10hourbutton");
-
-// var outputArea = document.getElementById("10hourtext");
-
-// buttonSave.onclick = function () {
-//     const key = inputKey;
-//     const value = inputValue.value;
-
-//     if (value) {
-//         localStorage.setItem(key, value);
-//     } else if (!value) {
-//         localStorage.removeItem(key, value);
-//     }
-// }
-
-// for (let i = 0; i < localStorage.length; i++) {
-//     const key = localStorage.key(i);
-//     const value = localStorage.getItem(key);
-
-//     outputArea.innerHTML += value;
-// }
